@@ -1,0 +1,84 @@
+<openerp>
+  <data>
+    <!-- explicit list view definition -->
+    
+    <record model="ir.ui.view" id="feriados_tree">
+      <field name="name">feriados list</field>
+      <field name="model">feriados.feriados</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="dia_count"/>
+        </tree>
+      </field>
+    </record>
+    
+    <!-- explicit list view definition -->
+    
+    <record model="ir.ui.view" id="feriados_form">
+      <field name="name">feriados list</field>
+      <field name="model">feriados.feriados</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="dia_count"/>
+            </group>
+            <notebook>
+              <page string="Dias">
+                <field name="dia_ids">
+                  <tree editable="true">
+                    <field name="date"/>
+                  </tree>
+                </field>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>    
+
+    <!-- actions opening views on models -->
+    
+    <record model="ir.actions.act_window" id="feriados_action_window">
+      <field name="name">Lista de feriados</field>
+      <field name="res_model">feriados.feriados</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="feriados.action_server">
+      <field name="name">feriados server</field>
+      <field name="model_id" ref="model_feriados_feriados"/>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="feriados" id="feriados.menu_root"/>
+    -->
+    <!-- menu categories -->
+    
+    <menuitem name="Feriados" id="feriados" parent="account.account_account_menu" action="feriados_action_window"/>
+    <!--
+    <menuitem name="Menu 2" id="feriados.menu_2" parent="feriados.menu_root"/>
+    -->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="feriados.menu_1_list" parent="feriados.menu_1"
+              action="feriados.action_window"/>
+    <menuitem name="Server to list" id="feriados" parent="feriados.menu_2"
+              action="feriados.action_server"/>
+    -->
+  </data>
+</openerp>
