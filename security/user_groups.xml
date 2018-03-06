@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+
+	<record model="ir.module.category" id="feriados_management">
+	  <field name="name">Feriados</field>
+	  <field name="description">Nivel de acceso</field>
+	  <field name="sequence">6</field>
+	</record>
+
+	<record id="manager" model="res.groups">
+     <field name="name">Administrador</field>
+     <field name="category_id" ref="feriados_management"/>
+    </record>
+
+</data>
+</openerp>
