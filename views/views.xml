@@ -9,6 +9,7 @@
         <tree>
           <field name="name"/>
           <field name="dia_count"/>
+          <field name="company_id" groups="base.group_erp_manager"/>
         </tree>
       </field>
     </record>
@@ -24,6 +25,7 @@
             <group>
               <field name="name"/>
               <field name="dia_count"/>
+              <field name="company_id" groups="base.group_erp_manager"/>
             </group>
             <notebook>
               <page string="Dias">

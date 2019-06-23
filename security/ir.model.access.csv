@@ -1,3 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_feriados_feriados,feriados.feriados,model_feriados_feriados,base.group_user,1,1,1,0
-access_feriados_feriados_dia,feriados.feriados.dia,model_feriados_feriados_dia,base.group_user,1,1,1,0
+access_feriados_feriados_manager,feriados.feriados,model_feriados_feriados,feriados.manager,1,1,1,1
+access_feriados_feriados,feriados.feriados,model_feriados_feriados,base.group_user,1,0,0,0
+access_feriados_feriados_dia,feriados.feriados.dia,model_feriados_feriados_dia,base.group_user,1,0,0,0
+access_feriados_feriados_dia_manager,feriados.feriados.dia,model_feriados_feriados_dia,feriados.manager,1,1,1,1

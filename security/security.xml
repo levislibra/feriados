@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <!-- <data noupdate="0"> -->
+        <record id="feriados_comp_rule1" model="ir.rule">
+            <field name="name">Feriados multi-company</field>
+            <field name="model_id" ref="model_feriados_feriados"/>
+            <field eval="True" name="global"/>
+            <field name="domain_force">[('company_id','child_of',[user.company_id.id])]</field>
+        </record>
+
+        <record id="feriados_dia_comp_rule1" model="ir.rule">
+            <field name="name">Feriados Dia multi-company</field>
+            <field name="model_id" ref="model_feriados_feriados_dia"/>
+            <field eval="True" name="global"/>
+            <field name="domain_force">[('company_id','child_of',[user.company_id.id])]</field>
+        </record>
+    <!-- </data>  -->
+</openerp>
